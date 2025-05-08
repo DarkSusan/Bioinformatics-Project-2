@@ -1,6 +1,6 @@
 import csv
 
-file = "CAZymes.csv"
+file = "Secreted_CAZymes.csv"
 
 def ecology_filter(input_file, features_header):
     with open(input_file, 'r') as f:

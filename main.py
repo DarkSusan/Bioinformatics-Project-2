@@ -2,7 +2,7 @@ import parser
 import randomforest
 
 if __name__ == '__main__':
-    files_features = [("CAZymes.csv", "AA1"), ("Proteases.csv", "A01A")]
+    files_features = [("Secreted_CAZymes.csv", "AA1"), ("Secreted_Proteases.csv", "A01A"), ("Secreted_lipase.csv", "GGGX|ABH01"), ("SSPs.csv", "00023_12796_13606_13637_13857"), ]
 
     for file, features_header in files_features:
         filtered_rows, header = parser.ecology_filter(file, features_header)
