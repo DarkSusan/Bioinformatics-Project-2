@@ -6,6 +6,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 def rf_mycorrhizae(input_file, num_estimators = 100, rand_state=42, size_of_test=0.3, mycorrhizae_weight = 1, non_mycorrhizae_weight = 1):
+    print("------------------------------------------")
+    print(f"\n{input_file.split(".")[0].lstrip("filtered").rstrip("mycorrhizae").replace("_", " ")}\n")
+    print("------------------------------------------")
     data = pd.read_csv(input_file, sep=',', header=0)
 
     X = data.iloc[:, 1:]  # All columns except the first
@@ -25,7 +28,7 @@ def rf_mycorrhizae(input_file, num_estimators = 100, rand_state=42, size_of_test
     # Evaluation
     print("Accuracy:", accuracy_score(y_test, y_pred))
     print("\nClassification Report:\n", classification_report(y_test, y_pred))
-    print("\nConfusion Matrix:\n")
+    print("\nGenerating Confusion Matrix\n")
     sns.heatmap(confusion_matrix(y_test, y_pred), annot=True, fmt='d', cmap='Blues')
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
