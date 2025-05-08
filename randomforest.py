@@ -15,7 +15,7 @@ def rf_mycorrhizae(input_file, num_estimators = 100, rand_state=42, size_of_test
     y = data.iloc[:, 0]  # First column
 
     # Test parameters
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=size_of_test, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=size_of_test, random_state=rand_state)
     print(f"Total number of test samples: {len(y_test)}")
 
     # Training parameters
